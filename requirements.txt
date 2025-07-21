@@ -1,0 +1,5 @@
+docling
+easyocr
+rapidocr_onnxruntime
+transformers
+tiktoken
