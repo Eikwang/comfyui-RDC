@@ -72,7 +72,7 @@ class DoclingConverter:
     RETURN_TYPES = ("STRING", "STRING", "STRING")
     RETURN_NAMES = ("json_output", "status", "metadata")
     FUNCTION = "convert"
-    CATEGORY = "Docling/文档处理"
+    CATEGORY = "RDC/文档处理"
     OUTPUT_NODE = True
 
     def convert(self, **kwargs) -> Tuple[str, str, str]:
@@ -842,7 +842,7 @@ class DoclingMetadataExtractor:
     RETURN_TYPES = ("STRING", "STRING", "LIST") 
     RETURN_NAMES = ("text_output", "metadata", "items")
     FUNCTION = "extract"
-    CATEGORY = "Docling/文档处理"
+    CATEGORY = "RDC/文档处理"
 
     def extract(self, json_input: str, extract_type: str) -> Tuple[str, str, list]:
         try:
@@ -1034,7 +1034,7 @@ class DoclingBatchProcessor:
     RETURN_TYPES = ("STRING", "STRING")
     RETURN_NAMES = ("status", "summary")
     FUNCTION = "process"
-    CATEGORY = "Docling/批处理"
+    CATEGORY = "RDC/批处理"
     OUTPUT_NODE = True
 
     def process(self, folder_path: str, output_folder: str, file_types: str, 
@@ -1156,13 +1156,10 @@ NODE_DISPLAY_NAME_MAPPINGS = {
 }
 
 CATEGORY_MAPPINGS = {
-    "Docling/文档处理": "文档处理",
-    "Docling/批处理": "批处理"
+    "RDC/文档处理": "文档处理",
+    "RDC/批处理": "批处理"
 }
 
 def get_custom_categories():
     """获取自定义类别映射"""
     return CATEGORY_MAPPINGS
-
-# 注册自定义类别
-comfy.utils.get_custom_categories = get_custom_categories
